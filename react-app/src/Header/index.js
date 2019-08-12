@@ -6,7 +6,7 @@ const Header = () => {
 		<header>
 			<ul>
 				<li><Link to='/'>Register</Link></li>
-				<li><Link to-'employees'>Employees</Link></li>
+				<li><Link to='/employee'>Employees</Link></li>
 			</ul>
 		</header>
 		)
