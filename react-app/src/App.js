@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 import EmployeeContainer from './EmployeeContainer';
-import { Route, Switch } from 'react-router-dom';
 import Register from './Register';
 import Header from './Header';
-// import Login from './Login' 
+import { Route, Link, Switch, BrowserRouter } from 'react-router-dom';
+import Login from './Login' 
 
 // class App extends Component {
 //   render() {
@@ -27,16 +27,19 @@ const My404 = () => {
     )
 };
 
-function App() {
+const App = () => {
   return (
-    <main>
-    <Header />
-        <Switch>
-          <Route exact path='/' component={ Register } />
-          <Route exact path='/employee' component={ EmployeeContainer } />
-          <Route component={My404}/>
-        </Switch>
-    </main>
+    <BrowserRouter>
+      <main>
+        <Header />
+          <Switch>
+            <Route exact path='/Register' component={ Register } />
+            <Route exact path='/' component={ Login } />
+            <Route exact path='/employees' component={ EmployeeContainer } />
+            <Route component={My404}/>
+          </Switch>
+      </main>
+    </BrowserRouter>
   );
 }
 
