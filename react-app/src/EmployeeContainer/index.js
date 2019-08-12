@@ -142,14 +142,14 @@ class EmployeeContainer extends Component {
         // movie we edited
         // and if they match update the movie with response
         // data from the api
-          em ployee = editResponse.data
+          employee = editResponse.data
         }
 
-        return movie
+        return employee
       });
 
       this.setState({
-        employees: editedMovieArray,
+        employees: editedEmployeeArray,
         showEditModal: false
       })
 
@@ -160,7 +160,7 @@ class EmployeeContainer extends Component {
       return err
     }
   }
-  deleteMovie = async (id) => {
+  deleteEmployee = async (id) => {
     console.log(id, ' delete employee ID')
 
     try {
@@ -175,7 +175,7 @@ class EmployeeContainer extends Component {
       }
 
       // this object is the actual response from the api
-      const deleteEmployeeson = await deleteEmployee.json();
+      const deleteEmployeeJson = await deleteEmployee.json();
 
       this.setState({
         employees: this.state.employees.filter((employee) => employee._id !== id)
@@ -198,4 +198,5 @@ class EmployeeContainer extends Component {
   }
 }
 
-export default MovieContainer;
+export default EmployeeContainer;
+
