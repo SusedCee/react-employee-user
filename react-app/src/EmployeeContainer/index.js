@@ -26,7 +26,7 @@ class EmployeeContainer extends Component {
     console.log(employee, e, ' inside of addEmployee')
 
     try {
-      const createEmployee = await fetch('http://localhost:9000/api/v1/employees',{
+      const createEmployee = await fetch('http://localhost:9000/api/v1/employee',{
         method: 'POST',
         credentials: 'include',
         body: JSON.stringify(employee),
@@ -62,7 +62,7 @@ class EmployeeContainer extends Component {
 
     try {
 
-      const responseGetEmployees = await fetch('http://localhost:9000/api/v1/employees', {
+      const responseGetEmployees = await fetch('http://localhost:9000/api/v1/employee', {
         credentials: 'include',
         method: 'GET'
       });
@@ -73,7 +73,7 @@ class EmployeeContainer extends Component {
         // before we parse
 
         // fetch won't reject a 404
-        // throw errow ends the try and sends
+        // throw error ends the try and sends
         // the error to the catch
         throw Error('404 from server');
       }
@@ -120,7 +120,7 @@ class EmployeeContainer extends Component {
     e.preventDefault();
 
     try {
-      const editRequest = await fetch('http://localhost:9000/api/v1/employees/' + this.state.employeeToEdit._id, {
+      const editRequest = await fetch('http://localhost:9000/api/v1/employee/' + this.state.employeeToEdit._id, {
         method: 'PUT',
         credentials: 'include',
         body: JSON.stringify(this.state.employeeToEdit),
@@ -165,7 +165,7 @@ class EmployeeContainer extends Component {
 
     try {
 
-      const deleteEmployee = await fetch('http://localhost:9000/api/v1/employees/' + id, {
+      const deleteEmployee = await fetch('http://localhost:9000/api/v1/employee/' + id, {
         method: 'DELETE',
         credentials: 'include'
       });
@@ -191,7 +191,7 @@ class EmployeeContainer extends Component {
     return (
       <div className='employee-container'>
         <CreateEmployee addEmployee={this.addEmployee}/>
-        <EmployeeList employees={this.state.employees} showModal={this.showModal} deleteEmployee={this.employee}/>
+        <EmployeeList employees={this.state.employees} showModal={this.showModal} deleteEmployee={this.deleteEmployee}/>
         {this.state.showEditModal ? <EditEmployee closeAndEdit={this.closeAndEdit} employeeToEdit={this.state.employeeToEdit} handleFormChange={this.handleFormChange}/> : null}
       </div>
       )
