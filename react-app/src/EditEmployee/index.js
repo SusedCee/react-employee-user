@@ -27,7 +27,7 @@ const EditEmployee = (props) => {
 					Edit Annual Salary:
 					<Form.Input type="text" name="annualSalary" onChange={props.handleFormChange} value={props.employeeToEdit.annualSalary}/>
 				</Label>
-				<Button type="submit">Edit</Button>
+				<Button type="submit">Submit Edit</Button>
 			</Form>
 		</div>
 	)

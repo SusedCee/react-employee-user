@@ -1,0 +1,13 @@
+.employees {
+	display: flex;
+	flex-direction: column;
+	list-style-type:none;
+	background-color: white;
+
+}
+
+.employees li {
+	display: block;
+	text-align: center;
+	flex-direction: column;
+}
