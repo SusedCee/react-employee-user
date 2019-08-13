@@ -1,4 +1,5 @@
 import React from 'react';
+import css from './style.css'
 
 const Employees = (props) => {
   console.log(props, ' props in employeeList')
@@ -20,7 +21,7 @@ const Employees = (props) => {
   return (
     <div>
       <h3>Employees</h3>
-      <ul>
+      <ul className="employees">
         {employeeList}
       </ul>
     </div>
